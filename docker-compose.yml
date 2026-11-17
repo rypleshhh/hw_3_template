@@ -1,0 +1,7 @@
+services:
+  app:
+    build:
+    dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
