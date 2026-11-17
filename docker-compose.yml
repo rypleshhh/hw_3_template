@@ -3,5 +3,9 @@ services:
     build: 
       dockerfile: Dockerfile
     restart: unless-stopped
+    environment:
+      - GREETING=Не стандартное приветствие..
+    ports:
+      - "8080:8000"
     volumes:
       - ./data:/app/data
