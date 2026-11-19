@@ -1,5 +1,5 @@
 services:
-  app1:
+  app:
     build: 
       dockerfile: Dockerfile
     restart: unless-stopped
@@ -8,5 +8,13 @@ services:
       - "8080:8000"
     volumes:
       - counter_data:/data
+  redis:
+    env_file: .env
+    build:
+      dockerfile: Dockerfile 
+    restart: unless-stopped
+    volumes:
+      -redis_data:/data
 volumes:
   counter_data:
+  redis_data:
